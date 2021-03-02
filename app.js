@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { ApolloServer } = require("apollo-server-express");
-const { typeDefs, resolvers } = require("./Graphql_Schema/schema.js");
+const { typeDefs, resolvers } = require("./Graphql_Schema/product_schema.js");
 const dotenv = require("dotenv");
 
 dotenv.config();
