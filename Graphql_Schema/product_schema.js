@@ -1,11 +1,12 @@
 const axios = require("axios");
 
 // Helper Function to extract data from response
-const info_filter = require("../helper");
+const { info_filter, similar_filter } = require("../helper");
 
 const typeDefs = `
     type Query{
         info(id: ID!): product
+        similarProduct(id: ID!):[ID]
     }
     type product{
         id: ID!
@@ -36,6 +37,12 @@ const resolvers = {
         }
       );
       return info_filter(res.data);
+    },
+    similarProduct: async (parent, args) => {
+      const res = await axios.get(
+        `http://gozefo.com:3000/api/products/${args.id}/similar`
+      );
+      similar_filter(res.data);
     },
   },
 };

@@ -15,4 +15,12 @@ const info_filter = (data) => {
   return res;
 };
 
-module.exports = info_filter;
+const similar_filter = (data) => {
+  let res = [];
+  for (let i = 0; i < data.searchResponse.hits.length; i++) {
+    res.push(data.searchResponse.hits[i].id);
+  }
+  console.log(res);
+};
+
+module.exports = { info_filter, similar_filter };
