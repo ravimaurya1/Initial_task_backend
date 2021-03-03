@@ -6,7 +6,7 @@ const { info_filter, similar_filter } = require("../helper");
 const typeDefs = `
     type Query{
         info(id: ID!): product
-        similarProduct(id: ID!):[ID]
+        similarProduct(id: ID!):[data]
     }
     type product{
         id: ID!
@@ -21,6 +21,14 @@ const typeDefs = `
         stockSize: Int
         availability: Boolean
         name: String
+    }
+    type data{
+      id : ID
+      condition: String
+      name: String
+      price: Int
+      offerPrice: Int
+      imageLink: String
     }
 `;
 
@@ -42,7 +50,7 @@ const resolvers = {
       const res = await axios.get(
         `http://gozefo.com:3000/api/products/${args.id}/similar`
       );
-      similar_filter(res.data);
+      return similar_filter(res.data);
     },
   },
 };

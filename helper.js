@@ -18,9 +18,16 @@ const info_filter = (data) => {
 const similar_filter = (data) => {
   let res = [];
   for (let i = 0; i < data.searchResponse.hits.length; i++) {
-    res.push(data.searchResponse.hits[i].id);
+    res.push({
+      id: data.searchResponse.hits[i].id,
+      condition: data.searchResponse.hits[i].condition,
+      name: data.searchResponse.hits[i].name,
+      price: data.searchResponse.hits[i].price,
+      offerPrice: data.searchResponse.hits[i].offerPrice,
+      imagelink: data.searchResponse.hits[i].imageLinks[0],
+    });
   }
-  console.log(res);
+  return res;
 };
 
 module.exports = { info_filter, similar_filter };
