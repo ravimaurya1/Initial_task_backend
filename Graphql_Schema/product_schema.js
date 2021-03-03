@@ -13,12 +13,13 @@ const typeDefs = `
         description: String
         condition: String!
         slugName: String!
-        price: Int!
+        price: Int
         offerPrice: Int!
         imageLinks: [String]
         categoryType: String
         stockSize: Int
         availability: Boolean
+        name: String
     }
 `;
 

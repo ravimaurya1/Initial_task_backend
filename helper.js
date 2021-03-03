@@ -5,12 +5,13 @@ const info_filter = (data) => {
   res.description = data.metaInfo.description;
   res.condition = data.productData.condition;
   res.slugName = data.productData.slugName;
-  res.price = data.productData.Price;
+  res.price = data.productData.price;
   res.offerPrice = data.productData.offerPrice;
   res.imageLinks = data.productData.imageLinks;
   res.categoryType = data.productData.categoryType;
   res.stockSize = data.productData.stockSize;
   res.availability = data.productData.availability;
+  res.name = data.productData.name;
   return res;
 };
 
