@@ -28,7 +28,7 @@ const typeDefs = `
       name: String
       price: Int
       offerPrice: Int
-      imageLink: String
+      imagelink: String
     }
 `;
 
