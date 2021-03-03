@@ -12,6 +12,7 @@ const info_filter = (data) => {
   res.stockSize = data.productData.stockSize;
   res.availability = data.productData.availability;
   res.name = data.productData.name;
+  res.question_ans = extract_ques(data);
   return res;
 };
 
@@ -28,6 +29,14 @@ const similar_filter = (data) => {
     });
   }
   return res;
+};
+
+const extract_ques = (data) => {
+  for (let i = 0; i < data.componentList.length; i++) {
+    if (data.componentList[i].componentName === "questionsAboutProduct") {
+      return data.componentList[i].data.questionsAndAnswers;
+    }
+  }
 };
 
 module.exports = { info_filter, similar_filter };

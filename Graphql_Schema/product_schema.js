@@ -21,6 +21,7 @@ const typeDefs = `
         stockSize: Int
         availability: Boolean
         name: String
+        question_ans: [ques]
     }
     type data{
       id : ID
@@ -29,6 +30,10 @@ const typeDefs = `
       price: Int
       offerPrice: Int
       imagelink: String
+    }
+    type ques{
+      heading: String
+      description: String
     }
 `;
 
