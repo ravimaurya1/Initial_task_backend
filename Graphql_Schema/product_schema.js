@@ -23,6 +23,7 @@ const typeDefs = `
         name: String
         question_ans: [ques]
         headingAndDescription: [ques]
+        metaInfo: metaData
     }
     type data{
       id : ID
@@ -34,6 +35,10 @@ const typeDefs = `
     }
     type ques{
       heading: String
+      description: String
+    }
+    type metaData {
+      title: String
       description: String
     }
 `;

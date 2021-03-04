@@ -14,6 +14,7 @@ const info_filter = (data) => {
   res.name = data.productData.name;
   res.question_ans = extract_ques(data);
   res.headingAndDescription = extract_des(data);
+  res.metaInfo = data.metaInfo;
   return res;
 };
 
