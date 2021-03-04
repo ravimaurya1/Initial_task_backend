@@ -13,6 +13,7 @@ const info_filter = (data) => {
   res.availability = data.productData.availability;
   res.name = data.productData.name;
   res.question_ans = extract_ques(data);
+  res.headingAndDescription = extract_des(data);
   return res;
 };
 
@@ -29,6 +30,14 @@ const similar_filter = (data) => {
     });
   }
   return res;
+};
+
+const extract_des = (data) => {
+  for (let i = 0; i < data.componentList.length; i++) {
+    if (data.componentList[i].componentName === "headingAndDescription") {
+      return data.componentList[i].data;
+    }
+  }
 };
 
 const extract_ques = (data) => {

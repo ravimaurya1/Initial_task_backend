@@ -22,6 +22,7 @@ const typeDefs = `
         availability: Boolean
         name: String
         question_ans: [ques]
+        headingAndDescription: [ques]
     }
     type data{
       id : ID
