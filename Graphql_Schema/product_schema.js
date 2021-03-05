@@ -59,7 +59,7 @@ const resolvers = {
   Query: {
     info: async (parent, args) => {
       const res = await axios.get(
-        `http://gozefo.com:3000/api/products/v2/${args.id}/view/device/desktop`,
+        `http://192.168.80.45:3000/api/products/v2/${args.id}/view/device/desktop`,
         {
           headers: {
             Cookie:
@@ -71,7 +71,7 @@ const resolvers = {
     },
     similarProduct: async (parent, args) => {
       const res = await axios.get(
-        `http://gozefo.com:3000/api/products/${args.id}/similar`
+        `http://192.168.80.45:3000/api/products/${args.id}/similar`
       );
       return similar_filter(res.data);
     },
@@ -88,18 +88,18 @@ const resolvers = {
           },
         }
       );
-      console.log(res.data);
+      console.log(res)
+      return(res.data.getSessionResponse.data.sessionId);
     },
     getcart: async (parent, args) => {
       const res = await axios.get(
-        "http://gozefo.com:3000/api/cart/full-data/device/desktop",
+        "http://192.168.80.45:3000/api/cart/full-data/device/desktop",
         {
           headers: {
             Cookie: `zefo.sid=${args.sessionId}; city=ncr;; isAuthenticated=; userId=; abRanddesktop=43; abRanddesktop.sig=5_voSo-k6Uj3jQb8Eu-FgDf-vg8; isAuthenticated.sig=WJ_5zRNCEtNSz9tmqC8I_ZDBqtA; userId.sig=i9jK1caKUJnByJyj7vOhgMv2tAM; zefo.sid=daa55110-69e0-493e-878b-d763da46a695; zefo.sid.sig=wxJ_UZDZmUQQLeK1esgI-w59FyY; expirySetAt=1614848123909; expirySetAt.sig=Ed9r2T0TfkiiqefF7ko_CYdmP_8`,
           },
         }
       );
-      console.log(res.data);
       return cart_filter(res.data);
     },
   },
@@ -107,7 +107,7 @@ const resolvers = {
     addToCart: async (parent, args) => {
       // product Id have to be in INT
       const res = await axios.post(
-        `http://gozefo.com:3000/api/cart/products/${args.productId}/v2?quantity=1`,
+        `http://192.168.80.45:3000/api/cart/products/${args.productId}/v2?quantity=1`,
         {
           data: {},
         },
@@ -126,7 +126,6 @@ const resolvers = {
           },
         }
       );
-      console.log(res.data);
       return "Added To Cart";
     },
   },
