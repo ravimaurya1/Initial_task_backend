@@ -1,12 +1,14 @@
 const axios = require("axios");
 
 // Helper Function to extract data from response
-const { info_filter, similar_filter } = require("../helper");
+const { info_filter, similar_filter, cart_filter } = require("../helper");
 
 const typeDefs = `
     type Query{
         info(id: ID!): product
         similarProduct(id: ID!):[data]
+        sessionId: String
+        getcart(id: ID!): [cartproduct]
     }
     type product{
         id: ID!
@@ -41,6 +43,10 @@ const typeDefs = `
       title: String
       description: String
     }
+    type cartproduct{
+      id: String
+      quantity: Int
+    }
 `;
 
 const resolvers = {
@@ -62,6 +68,30 @@ const resolvers = {
         `http://gozefo.com:3000/api/products/${args.id}/similar`
       );
       return similar_filter(res.data);
+    },
+    sessionId: async (parent, args) => {
+      const res = await axios.post(
+        `http://192.168.124.123:8500/platform/v1/session`,
+        {
+          headers: {
+            "X-quikr-client": "DesktopSite",
+            "content-type": "application/json",
+          },
+          data: {},
+        }
+      );
+      console.log(res.data);
+    },
+    getcart: async (parent, args) => {
+      const res = await axios.get(
+        "http://gozefo.com:3000/api/cart/full-data/device/desktop",
+        {
+          headers: {
+            Cookie: `zefo.sid=${args.id}; city=ncr;; isAuthenticated=; userId=; abRanddesktop=43; abRanddesktop.sig=5_voSo-k6Uj3jQb8Eu-FgDf-vg8; isAuthenticated.sig=WJ_5zRNCEtNSz9tmqC8I_ZDBqtA; userId.sig=i9jK1caKUJnByJyj7vOhgMv2tAM; zefo.sid=daa55110-69e0-493e-878b-d763da46a695; zefo.sid.sig=wxJ_UZDZmUQQLeK1esgI-w59FyY; expirySetAt=1614848123909; expirySetAt.sig=Ed9r2T0TfkiiqefF7ko_CYdmP_8`,
+          },
+        }
+      );
+      return cart_filter(res.data);
     },
   },
 };

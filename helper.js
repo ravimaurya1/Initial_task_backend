@@ -49,4 +49,15 @@ const extract_ques = (data) => {
   }
 };
 
-module.exports = { info_filter, similar_filter };
+const cart_filter = (data) => {
+  let res = [];
+  for (let i = 0; i < data.cart.products.length; i++) {
+    res.push({
+      id: data.cart.products[i].id,
+      quantity: data.cart.products[i].quantity,
+    });
+  }
+  return res;
+};
+
+module.exports = { info_filter, similar_filter, cart_filter };
