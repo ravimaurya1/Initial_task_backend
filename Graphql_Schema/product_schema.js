@@ -6,9 +6,10 @@ const { info_filter, similar_filter, cart_filter } = require("../helper");
 const typeDefs = `
     type Query{
         info(id: ID!): product
-        similarProduct(id: ID!):[data]
+        similarProduct(id: ID!):[data] 
         sessionId: String
         getcart(id: ID!): [cartproduct]
+
     }
     type product{
         id: ID!
@@ -73,11 +74,13 @@ const resolvers = {
       const res = await axios.post(
         `http://192.168.124.123:8500/platform/v1/session`,
         {
-          headers: {
-            "X-quikr-client": "DesktopSite",
-            "content-type": "application/json",
-          },
           data: {},
+        },
+        {
+          headers: {
+            "X-Quikr-Client": "DesktopSite",
+            "Content-Type": "application/json",
+          },
         }
       );
       console.log(res.data);
