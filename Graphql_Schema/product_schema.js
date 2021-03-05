@@ -13,7 +13,7 @@ const typeDefs = `
     }
 
     type Mutation{
-      addToCart(sessonId: ID!, productId: ID!): String
+      addToCart(sessionId: ID!, productId: ID!): String
     }
 
     type product{
@@ -99,6 +99,7 @@ const resolvers = {
           },
         }
       );
+      console.log(res.data);
       return cart_filter(res.data);
     },
   },
