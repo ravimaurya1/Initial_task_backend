@@ -32,6 +32,11 @@ const typeDefs = `
         question_ans: [ques]
         headingAndDescription: [ques]
         metaInfo: metaData
+        details: detailstype
+        quality: String
+        delivery: String
+        return : String
+        pricing: String
     }
     type data{
       id : ID
@@ -52,6 +57,16 @@ const typeDefs = `
     type cartproduct{
       id: String
       quantity: Int
+    }
+    type detailstype{
+      Dimension: String
+      Color: String
+      Material: String
+      Frame: String
+      Storage: String
+      SoftnessImage: String
+      SoftnessText: String
+      DimensionImage: String
     }
 `;
 
