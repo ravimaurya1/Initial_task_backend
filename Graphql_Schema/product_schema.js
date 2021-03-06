@@ -88,7 +88,6 @@ const resolvers = {
           },
         }
       );
-      console.log(res)
       return(res.data.getSessionResponse.data.sessionId);
     },
     getcart: async (parent, args) => {
