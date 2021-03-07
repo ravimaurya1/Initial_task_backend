@@ -37,6 +37,10 @@ const typeDefs = `
         delivery: String
         return : String
         pricing: String
+        startingEmi: Int
+        paymentModeAvailableText: String
+        SeatingHeight: String
+        subCategoryType: String
     }
     type data{
       id : ID

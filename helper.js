@@ -11,6 +11,10 @@ const info_filter = (data) => {
   res.categoryType = data.productData.categoryType;
   res.stockSize = data.productData.stockSize;
   res.availability = data.productData.availability;
+  res.startingEmi = data.productData.startingEmi;
+  res.paymentModeAvailableText = data.productData.paymentModeAvailableText;
+  res.SeatingHeight = data.productData.filterFeatures['Seating Height'];
+  res.subCategoryType = data.productData.subCategoryType;
   res.name = data.productData.name;
   res.question_ans = extract_ques(data);
   res.headingAndDescription = extract_des(data);
@@ -31,15 +35,6 @@ const info_filter = (data) => {
             SoftnessText: data.componentList[i].data[j].data.infoWithGraphics[0].text,
             DimensionImage: data.componentList[i].data[j].data.dimensionData.data[0].link
           };
-            // console.log(data.componentList[i].data[j].data.info[0].data[0].value);
-            // console.log(data.componentList[i].data[j].data.info[0].data[1].value);
-            // console.log(data.componentList[i].data[j].data.info[0].data[2].value);
-            // console.log(data.componentList[i].data[j].data.info[0].data[3].value);
-            // console.log(data.componentList[i].data[j].data.info[0].data[4].value);
-            // console.log(data.componentList[i].data[j].data.info[0].data[5].value);
-            // console.log("softnessImage",data.componentList[i].data[j].data.infoWithGraphics[0].image);
-            // console.log("softnessText",data.componentList[i].data[j].data.infoWithGraphics[0].text);
-            // console.log("DimensionImage",data.componentList[i].data[j].data.dimensionData.data[0].link);
         }
         if(data.componentList[i].data[j].key === 'quality'){
             res.quality = data.componentList[i].data[j].data[0].values;
