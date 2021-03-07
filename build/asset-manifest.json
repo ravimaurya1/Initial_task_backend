@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6d5eb58f.chunk.css",
+    "main.js": "/static/js/main.d1c76db2.chunk.js",
+    "main.js.map": "/static/js/main.d1c76db2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.248907bc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.248907bc.js.map",
+    "static/js/2.850e161f.chunk.js": "/static/js/2.850e161f.chunk.js",
+    "static/js/2.850e161f.chunk.js.map": "/static/js/2.850e161f.chunk.js.map",
+    "index.html": "/index.html",
+    "service-worker.js": "/service-worker.js",
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/css/main.6d5eb58f.chunk.css.map": "/static/css/main.6d5eb58f.chunk.css.map",
+    "static/js/2.850e161f.chunk.js.LICENSE.txt": "/static/js/2.850e161f.chunk.js.LICENSE.txt",
+    "static/media/Emptycart.b2d3ad0d.png": "/static/media/Emptycart.b2d3ad0d.png",
+    "static/media/cart.19c60e8b.png": "/static/media/cart.19c60e8b.png",
+    "static/media/email.83792d31.svg": "/static/media/email.83792d31.svg",
+    "static/media/facebook.7f1edf03.svg": "/static/media/facebook.7f1edf03.svg",
+    "static/media/linkedin.8861cb0e.svg": "/static/media/linkedin.8861cb0e.svg",
+    "static/media/login.2966902b.png": "/static/media/login.2966902b.png",
+    "static/media/quikrbazaar.efc3b6d6.png": "/static/media/quikrbazaar.efc3b6d6.png",
+    "static/media/qukir2.433dee2b.jpg": "/static/media/qukir2.433dee2b.jpg",
+    "static/media/twitter.536733a8.svg": "/static/media/twitter.536733a8.svg",
+    "static/media/wordpress.d16da031.svg": "/static/media/wordpress.d16da031.svg",
+    "static/media/zefo_logo.964b6855.png": "/static/media/zefo_logo.964b6855.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.248907bc.js",
+    "static/js/2.850e161f.chunk.js",
+    "static/css/main.6d5eb58f.chunk.css",
+    "static/js/main.d1c76db2.chunk.js"
+  ]
+}
